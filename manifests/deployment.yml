@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myfirstk8s-2b84"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myfirstk8s-2b84"
+  template:
+    metadata:
+      labels:
+        app: "myfirstk8s-2b84"
+    spec:
+      containers:
+        - name: "myfirstk8s-2b84"
+          image: "myfirstcon.azurecr.io/myfirstk8s"
+          ports:
+          - containerPort: 5000
