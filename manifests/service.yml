@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "myfirstk8s-2b84"
+    labels:
+        app: "myfirstk8s-2b84"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+      name: http
+    selector:
+        app: "myfirstk8s-2b84"
